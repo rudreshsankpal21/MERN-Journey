@@ -1,0 +1,22 @@
+***********Learned Props***************
+
+import ProfileCard from "./components/ProfileCard";
+
+{/* <div className="flex flex-wrap w-auto">
+        <ProfileCard
+          name="Rudresh sankpal"
+          age={19}
+          bio="Im learning fullstack development"
+          profile={
+            "data:image-URL"
+          }
+        />
+        <ProfileCard
+          name="Hardik sankpal"
+          age={20}
+          bio="Im learning Backend development"
+          profile={
+            "data:...image-URL"
+          }
+        />
+      </div> */}
