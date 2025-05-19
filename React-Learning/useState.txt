@@ -1,0 +1,61 @@
+***********Learned useState***************
+///// CREATED INCREMENTING & DECREMENTING NUMBERS 
+import { useState } from "react";
+import "./App.css";
+const App = () => {
+  const [val, setval] = useState(0);
+  return (
+    <>
+      <h1>{val}</h1>
+      <button
+        onClick={() => {
+          setval(val + 1);
+        }}
+      >
+        Increment
+      </button>
+
+      <button
+        onClick={() => {
+          setval(val - 1);
+        }}
+      >
+        Decrement
+      </button>
+
+      <button
+        onClick={() => {
+          setval(val + 2);
+        }}
+      >
+        Increment by 2
+      </button>
+
+      <button
+        onClick={() => {
+          setval(val - 2);
+        }}
+      >
+        Decrement by 2
+      </button>
+
+      <button
+        onClick={() => {
+          setval(val * 2);
+        }}
+      >
+        Multiply by 2
+      </button>
+
+      <button
+        onClick={() => {
+          setval(val * 5);
+        }}
+      >
+        Multiply by 5
+      </button>
+    </>
+  );
+};
+
+export default App;
