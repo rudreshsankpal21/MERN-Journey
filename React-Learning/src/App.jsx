@@ -1,9 +1,9 @@
 import "./App.css";
-import Tasks from "./components/Tasks";
+import Posts from "./components/Posts";
 const App = () => {
   return (
     <>
-      <Tasks />
+      <Posts />
     </>
   );
 };

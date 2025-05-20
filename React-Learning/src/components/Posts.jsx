@@ -1,0 +1,37 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+const Posts = () => {
+  // useState
+  const [posts, setposts] = useState([]);
+  // useEffect
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((post) => {
+        // Update the posts
+        setposts(post.data);
+      })
+      .catch((err) => {});
+    return () => {};
+  }, []);
+  return (
+    <>
+      <h1 className="text-4xl text-center">Network Request</h1>
+      <ul>
+        {posts.map((post) => {
+          return (
+            <li className="border-2 p-4 m-4 hover:text-white hover:bg-black transition-all ease-in">
+              <h1 className="text-2xl">
+                {" "}
+                {post.id} :- {post.title}
+              </h1>
+              <p> {post.body} </p>
+            </li>
+          );
+        })}
+      </ul>
+    </>
+  );
+};
+
+export default Posts;
