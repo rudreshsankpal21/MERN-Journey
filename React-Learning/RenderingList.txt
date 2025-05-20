@@ -2,30 +2,33 @@
 import React, { useState } from "react";
 const Tasks = () => {
   const [tasks, settasks] = useState([
-    { id: 1, task: "UI Design", completed: false },
-    { id: 2, task: "Responsive Design", completed: false },
-    { id: 3, task: "backend integration", completed: true },
-    { id: 4, task: "Authentication", completed: true },
-    { id: 5, task: "Connected DB", completed: true },
+    { id: 1, taskName: "Task 1", isComplete: true },
+    { id: 2, taskName: "Task 2", isComplete: false },
+    { id: 3, taskName: "Task 3", isComplete: true },
+    { id: 4, taskName: "Task 4", isComplete: false },
+    { id: 5, taskName: "Task 5", isComplete: true },
+    { id: 6, taskName: "Task 6", isComplete: false },
+    { id: 7, taskName: "Task 7", isComplete: true },
+    { id: 8, taskName: "Task 8", isComplete: false },
+    { id: 9, taskName: "Task 9", isComplete: true },
+    { id: 10, taskName: "Task 10", isComplete: false },
   ]);
-
   return (
-    <div className="border-2 p-4 m-6">
-      <h1 className="text-3xl font-bold underline py-3">Tasks List</h1>
-      <ul className="py-4">
-        {tasks.map((task) => {
-          return (
-            <li
-              key={task.id}
-              className="py-.5 hover:underline hover:cursor-pointer hover:text-2xl"
-            >
-              {task.id} :- {task.task} -{" "}
-              {task.completed ? "Task Completed" : "Pending"}{" "}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      <div>
+        <h1>Tasks List</h1>
+        <ul>
+          {tasks.map((task) => {
+            return (
+              <li>
+                {task.id} - {task.taskName} --
+                {task.isComplete ? "Completed" : "Pending"}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </>
   );
 };
 
