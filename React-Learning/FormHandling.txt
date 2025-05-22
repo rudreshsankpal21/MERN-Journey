@@ -28,6 +28,7 @@ const StudentRegistrationForm = () => {
     console.log({ name, age, subject, consent });
   };
 
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
