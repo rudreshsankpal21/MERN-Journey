@@ -1,9 +1,9 @@
 import "./App.css";
-import Users from "./components/Users";
+import StudentRegistrationForm from "./components/StudentRegistrationForm";
 const App = () => {
   return (
     <>
-      <Users />
+      <StudentRegistrationForm />
     </>
   );
 };
