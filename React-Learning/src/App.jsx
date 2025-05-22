@@ -1,9 +1,9 @@
 import "./App.css";
-import StudentRegistrationForm from "./components/StudentRegistrationForm";
+import UserRegistrationForm from "./components/UserRegistrationForm";
 const App = () => {
   return (
     <>
-      <StudentRegistrationForm />
+      <UserRegistrationForm />
     </>
   );
 };
