@@ -39,6 +39,7 @@ It's a powerful stack for full-stack JavaScript development, and I'm learning it
 
 ### Phase 4: Advanced Concepts (Coming Soon)
 
+- [ ] DSA in JavaScript
 - [ ] Next.js
 - [ ] WebSockets
 - [ ] Backend System Design
