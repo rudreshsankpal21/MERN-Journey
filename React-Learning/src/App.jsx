@@ -1,11 +1,7 @@
 import React from "react";
-import TeacherRegistrationForm from "./components/TeacherRegistrationForm";
+
 const App = () => {
-  return (
-    <div>
-      <TeacherRegistrationForm />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default App;
