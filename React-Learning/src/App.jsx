@@ -1,31 +1,42 @@
-import React, { useReducer, useContext, createContext } from "react";
+import React, { useReducer, createContext, useContext } from "react";
 
-const initialContext = {
-  count: 0,
+const initialState = {
+  count: 1,
 };
 
+// creating reducer
 const reducer = (state, action) => {
-  if (action.type === "INC") {
+  if (action.type === "MULBY2") {
     return {
       ...state,
-      count: state.count + 1,
+      count: state.count * 2,
     };
-  } else if (action.type === "DEC") {
+  } else if (action.type === "MULBY3") {
     return {
       ...state,
-      count: state.count - 1,
+      count: state.count * 3,
+    };
+  } else if (action.type === "MULBY4") {
+    return {
+      ...state,
+      count: state.count * 4,
+    };
+  } else if (action.type === "MULBY5") {
+    return {
+      ...state,
+      count: state.count * 5,
     };
   } else {
     return state;
   }
 };
 
-// Creating Context
+// creating context
 const CountContext = createContext();
 
-// Creating Provider
+// creating provider
 const CountProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialContext);
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <CountContext.Provider value={{ state, dispatch }}>
       {children}
@@ -37,23 +48,33 @@ const Counter = () => {
   const { state, dispatch } = useContext(CountContext);
   return (
     <>
-      <div className="bg-black text-white">
+      <div>
+        <h1>Counter</h1>
         <h1>{state.count}</h1>
-        <button onClick={() => dispatch({ type: "INC" })}>Increment</button>
-        <button onClick={() => dispatch({ type: "DEC" })}>Decrement</button>
-      </div>
-    </>
-  );
-};
-const Counter2 = () => {
-  const { state, dispatch } = useContext(CountContext);
-  return (
-    <>
-      <div className="bg-black text-white">
-        <h1>Counter 2</h1>
-        <h1>{state.count}</h1>
-        <button onClick={() => dispatch({ type: "INC" })}>Increment</button>
-        <button onClick={() => dispatch({ type: "DEC" })}>Decrement</button>
+        <button
+          onClick={() => dispatch({ type: "MULBY2" })}
+          className="border-2 p-3 m-4 bg-black text-white font-bold"
+        >
+          Multiply by 2
+        </button>
+        <button
+          onClick={() => dispatch({ type: "MULBY3" })}
+          className="border-2 p-3 m-4 bg-black text-white font-bold"
+        >
+          Multiply by 3
+        </button>
+        <button
+          onClick={() => dispatch({ type: "MULBY4" })}
+          className="border-2 p-3 m-4 bg-black text-white font-bold"
+        >
+          Multiply by 4
+        </button>
+        <button
+          onClick={() => dispatch({ type: "MULBY5" })}
+          className="border-2 p-3 m-4 bg-black text-white font-bold"
+        >
+          Multiply by 5
+        </button>
       </div>
     </>
   );
@@ -64,9 +85,6 @@ const App = () => {
     <>
       <CountProvider>
         <Counter />
-      </CountProvider>
-      <CountProvider>
-        <Counter2 />
       </CountProvider>
     </>
   );
