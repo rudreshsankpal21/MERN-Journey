@@ -33,8 +33,8 @@ It's a powerful stack for full-stack JavaScript development, and I'm learning it
 ### Phase 3: Frontend (In Progress)
 
 - [x] React Basics
+- [x] State Management (Hooks & Context)
 - [ ] React Router
-- [ ] State Management (Hooks & Context)
 - [ ] Animations (Framer Motion, GSAP)
 
 ### Phase 4: Advanced Concepts (Coming Soon)
