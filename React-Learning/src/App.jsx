@@ -23,6 +23,11 @@ const reducer = (state, action) => {
       ...state,
       count: state.count * 5,
     };
+  } else if (action.type == "MULBY6") {
+    return {
+      ...state,
+      count: state.count * 6,
+    };
   } else {
     return state;
   }
@@ -38,6 +43,7 @@ const Counter = () => {
         <button onClick={() => dispatch({ type: "MULBY3" })}>Mult by 3</button>
         <button onClick={() => dispatch({ type: "MULBY4" })}>Mult by 4</button>
         <button onClick={() => dispatch({ type: "MULBY5" })}>Mult by 5</button>
+        <button onClick={() => dispatch({ type: "MULBY6" })}>Mult by 6</button>
       </div>
     </>
   );
