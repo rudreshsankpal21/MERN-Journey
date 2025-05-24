@@ -1,42 +1,31 @@
-import React, { useReducer, createContext, useContext } from "react";
+import React, { useReducer, useContext, createContext } from "react";
 
-const initialState = {
-  count: 1,
+const initialContext = {
+  count: 0,
 };
 
-// creating reducer
 const reducer = (state, action) => {
-  if (action.type === "MULBY2") {
+  if (action.type === "INC") {
     return {
       ...state,
-      count: state.count * 2,
+      count: state.count + 1,
     };
-  } else if (action.type === "MULBY3") {
+  } else if (action.type === "DEC") {
     return {
       ...state,
-      count: state.count * 3,
-    };
-  } else if (action.type === "MULBY4") {
-    return {
-      ...state,
-      count: state.count * 4,
-    };
-  } else if (action.type === "MULBY5") {
-    return {
-      ...state,
-      count: state.count * 5,
+      count: state.count - 1,
     };
   } else {
     return state;
   }
 };
 
-// creating context
+// Creating Context
 const CountContext = createContext();
 
-// creating provider
+// Creating Provider
 const CountProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialContext);
   return (
     <CountContext.Provider value={{ state, dispatch }}>
       {children}
@@ -48,33 +37,11 @@ const Counter = () => {
   const { state, dispatch } = useContext(CountContext);
   return (
     <>
-      <div>
-        <h1>Counter</h1>
+      <div className="bg-black text-white">
+        <h1>Counter 1</h1>
         <h1>{state.count}</h1>
-        <button
-          onClick={() => dispatch({ type: "MULBY2" })}
-          className="border-2 p-3 m-4 bg-black text-white font-bold"
-        >
-          Multiply by 2
-        </button>
-        <button
-          onClick={() => dispatch({ type: "MULBY3" })}
-          className="border-2 p-3 m-4 bg-black text-white font-bold"
-        >
-          Multiply by 3
-        </button>
-        <button
-          onClick={() => dispatch({ type: "MULBY4" })}
-          className="border-2 p-3 m-4 bg-black text-white font-bold"
-        >
-          Multiply by 4
-        </button>
-        <button
-          onClick={() => dispatch({ type: "MULBY5" })}
-          className="border-2 p-3 m-4 bg-black text-white font-bold"
-        >
-          Multiply by 5
-        </button>
+        <button onClick={() => dispatch({ type: "INC" })}>Increment</button>
+        <button onClick={() => dispatch({ type: "DEC" })}>Decrement</button>
       </div>
     </>
   );
