@@ -34,7 +34,8 @@ It's a powerful stack for full-stack JavaScript development, and I'm learning it
 
 - [x] React Basics
 - [x] State Management (Hooks & Context)
-- [ ] React Router
+- [x] React Router
+- [ ] Real-time communication (Socket io)
 - [ ] Animations (Framer Motion, GSAP)
 
 ### Phase 4: Advanced Concepts (Coming Soon)
