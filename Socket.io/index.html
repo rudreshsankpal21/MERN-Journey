@@ -14,6 +14,9 @@
       socket.on("messageFromServer", (message) => {
         console.log("Received message from server :- ", message);
       });
+
+      // Emit message to server
+      socket.emit("messageFromClient", "Hello from the client");
     </script>
   </body>
 </html>

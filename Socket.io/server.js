@@ -16,6 +16,11 @@ io.on("connection", (socket) => {
   console.log("a user connected");
   // Emit message to client
   socket.emit("messageFromServer", "Hello from the server");
+
+  // Emit message from client
+  socket.on("messageFromClient", (message) => {
+    console.log("Received message from client :- ", message);
+  });
 });
 
 // Start the server
