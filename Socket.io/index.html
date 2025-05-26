@@ -11,6 +11,9 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
       const socket = io();
+      socket.on("messageFromServer", (message) => {
+        console.log("Received message from server :- ", message);
+      });
     </script>
   </body>
 </html>

@@ -14,9 +14,8 @@ app.get("/", (req, res) => {
 // Listen to connection from client
 io.on("connection", (socket) => {
   console.log("a user connected");
-  socket.on("disconnect", () => {
-    console.log("user disconnected");
-  });
+  // Emit message to client
+  socket.emit("messageFromServer", "Hello from the server");
 });
 
 // Start the server
