@@ -35,16 +35,18 @@ It's a powerful stack for full-stack JavaScript development, and I'm learning it
 - [x] React Basics
 - [x] State Management (Hooks & Context)
 - [x] React Router
-- [ ] Real-time communication (Socket io)
+- [x] Real-time communication (Socket io)
+- [ ] Redux
 
 ### Phase 4: Advanced Concepts (Coming Soon)
 
 - [ ] DSA in JavaScript
-- [ ] Next.js
-- [ ] Animations (Framer Motion, GSAP)
-- [ ] WebSockets
 - [ ] Backend System Design
 - [ ] Deployment (Render, Vercel, etc.)
+- [ ] Next.js
+- [ ] Docker (containers)
+- [ ] Kubernetes (basics)
+- [ ] CI/CD pipelines (GitHub actions, GitLab CI)
 
 ---
 
