@@ -24,6 +24,7 @@ const Register = () => {
     validationSchema,
     onSubmit: (values) => {
       //Make http request
+      console.log(values);
     },
   });
 
